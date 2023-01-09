@@ -1,0 +1,77 @@
+
+
+#compute powers of 2 for 0-20
+def question_3():
+    answ = 0
+    for power in range(0, 21):
+        answ = 2**power
+        print("2^", power, " =", answ)
+
+
+#compute sum of all odd digits in input
+def question_5():
+    number = input("Enter a number: ")
+    added = 0
+
+    for digit in number:
+        if int(digit) % 2 != 0:
+            added += int(digit)
+    print("The sum of the odd digits is: ", added)
+
+#largest odd number entered
+def question_6():
+    a = int(input("Enter a number: "))
+    b = int(input("Enter a number: "))
+    c = int(input("Enter a number: "))
+    d = int(input("Enter a number: "))
+    e = int(input("Enter a number: "))
+    f = int(input("Enter a number: "))
+    g = int(input("Enter a number: "))
+    h = int(input("Enter a number: "))
+    i = int(input("Enter a number: "))
+    j = int(input("Enter a number: "))
+
+    number = [a, b, c, d, e, f, g, h, i, j]
+    new_list = []
+    for x in number:
+        if x % 2 == 1:
+            new_list = [x]
+            new_list.sort()
+    if x%2 not in number:
+        print("No odd number")
+    print("Largest number is ", new_list[-1])
+
+
+#sum of digits in string
+def question_7():
+    total = 0
+    phrase = input("Enter a sentence: ")
+
+    for i in phrase:
+        if i.isdigit():
+            number = int(i)
+            total += number
+    print("The sum of the digits in the sentence is: ", total)
+
+#**
+#dec numbers separated by comma add sum
+def question_8():
+    total = 0
+    x = ''
+    phrase = input("Type a list of decimal numbers separated by commas: ")
+    for i in phrase:
+        x += i
+        if i == ',':
+            total += float(x[:len(x)-1])
+            x = ''
+    total += float(x)
+    print("The sum of the decimals is: ", total)
+
+
+if __name__ == "__main__":
+  question_3()
+  question_5()
+  question_6()
+  question_7()
+  question_8()
+  
