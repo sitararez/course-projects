@@ -1,0 +1,173 @@
+
+
+#reads float number, prints 0 if 0, pos/neg if pos/neg
+def question_2():
+  number = float(input("Write a number: "))
+
+  if number == 0:
+    print("zero")
+  if number > 0:
+    print("positive")
+    if abs(number) > 1000:
+      print("large")
+    elif 1 > abs(number) > 0:
+      print("small")
+  if number < 0:
+    print("negative")
+    if abs(number) > 1000:
+      print("large")
+    elif 1 > abs(number) > 0:
+      print("small")
+
+#checks how many digits
+def question_3():
+  number = int(input("Write a number: "))
+
+  if number < 0:
+    number = number * -1
+  if 0 <= number < 10:
+    print("This number has one digit")
+  elif 10 <= number < 100:
+    print("This number has two digits")
+  elif 100 <= number < 1000:
+    print("this number has three digits")
+  elif 1000 <= number < 10000:
+    print("this number has four digits")
+  elif 10000 <= number < 100000:
+    print("this number has five digits")
+  elif 100000 <= number < 1000000:
+    print("This number has six digits")
+  else:
+    print("lots")
+  """" other method
+  number = int(input("Write a number: "))
+if number < 0:
+    number = number*-1
+    print(number)
+elif 0 < number < 1000000:
+    number = len(str(number))
+    print(f"This number has {number} digit(s)")
+else:
+    print("lots")
+  """
+
+#reads 3 integer inputs, checks if all same/different/neither
+def question_4():
+  n1 = int(input("Enter a number: "))
+  n2 = int(input("Enter another number: "))
+  n3 = int(input("Enter another number: "))
+
+  if n1 == n2 == n3:
+    print("all same")
+  elif n1 != n2 and n2 != n3 and n3 != n1:
+    print("all different")
+  else:
+    print("neither")
+
+#check if numbers increasing/decreasing, strict/lenient mode
+def question_6():
+  n1 = int(input("Enter a number: "))
+  n2 = int(input("Enter another number: "))
+  n3 = int(input("Enter another number: "))
+
+  mode = input("strict or lenient mode? ")
+
+  if mode == 'strict':
+    if n1 < n2 < n3:
+      print("increasing")
+    elif n1 > n2 > n3:
+      print("decreasing")
+    else:
+      print("neither")
+  elif mode == 'lenient':
+    if n1 < n2 or n2 < n3:
+      print("increasing")
+    elif n1 > n2 or n2 > n3:
+      print("decreasing")
+    elif n1 == n2 == n3:
+      print("increasing")
+      print("decreasing")
+
+#checks if num in order
+def question_7():
+  n1 = int(input("Enter a number: "))
+  n2 = int(input("Enter another number: "))
+  n3 = int(input("Enter another number: "))
+
+  if (n1 <= n2 < n3) or (n1 < n2 <= n3):
+    print("in order")
+  elif (n1 >= n2 > n3) or (n1 > n2 >= n3):
+    print("in order")
+  else:
+    print("not in order")
+
+#checks for pairs
+def question_8():
+  n1 = int(input("Enter a number: "))
+  n2 = int(input("Enter another number: "))
+  n3 = int(input("Enter another number: "))
+  n4 = int(input("Enter another number: "))
+
+  if (n1 == n2 and n3 == n4) or (n1 == n3 and n2 == n4) or (n1 == n4
+                                                            and n2 == n3):
+    print("two pairs")
+  else:
+    print("not two pairs")
+
+#checks for C and F temp values, if water liquid/solid/gas at given temp
+def question_9():
+  temp = (input("Enter a temperature value: "))
+  degree = int(temp[:-1])
+  str_value = temp[-1]
+
+  if str_value.upper() == "C":
+    if degree >= 100:
+      print("Water is gaseous at this temperature")
+    elif degree <= 0:
+      print("Water is solid at this temperature")
+    else:
+      print("Water is liquid at this temperature")
+  elif str_value.upper() == "F":
+    if degree >= 212:
+      print("Water is gaseous at this temperature")
+    elif degree <= 32:
+      print("Water is solid at this temperature")
+    else:
+      print("Water is liquid at this temperature")
+
+#letter grade to number grade conversion
+def question_10():
+  letter = (input("Enter a letter grade: "))
+  letter = letter.upper()
+  sign = 0
+  number = 0
+  if "+" == letter[1]:
+    sign += 0.3
+  if "-" in letter[1]:
+    sign -= 0.3
+
+  if letter[0] == "A":
+    number = 4
+    print("The numeric value of ", letter, "is ", number + sign)
+  if letter[0] == "B":
+    number = 3
+    print("The numeric value of ", letter, "is ", number + sign)
+  if letter[0] == "C":
+    number = 2
+    print("The numeric value of ", letter, "is ", number + sign)
+  if letter[0] == "D":
+    number = 1
+    print("The numeric value of ", letter, "is ", number + sign)
+  elif letter[0] == "F":
+    print("The numeric value of ", letter[0], "is ", number)
+
+
+if __name__ == "__main__":
+  question_2()
+  question_3()
+  question_4()
+  question_6()
+  question_7()
+  question_8()
+  question_9()
+  question_10()
