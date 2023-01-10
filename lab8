@@ -1,0 +1,82 @@
+
+#a recursive function to add a positive integer b to another number a
+def question_1():
+    def add(a, b):
+        if b == 1:
+            return a + 1
+        else:
+            return 1 + (a + (b - 1))
+
+    print("question 1: ", add(5, 9), "\n")
+
+
+
+#gives an integer approximation of the log base 2 of a positive number x
+def question_2():
+    import math
+
+    def log2(x):
+        if x <= 1:
+            return 0
+        else:
+            return int(1 + (math.log2(x / 2)))
+
+    print("question 2: ", log2(12), "\n")
+
+
+#reversing a sentence
+def question_3():
+    def reverse(sentence):
+        if len(sentence) == 0:
+            return 1
+        else:
+            sentence.replace('?', "")
+            newstr = sentence[::-1]
+            return newstr
+
+    print(reverse("Who let the dogs out?\n"))
+
+
+#recursive function power(x, n), where n is 0 or a postive integer
+def question_4():
+    def power(x, n):
+        if x < 0:
+            return 1
+        else:
+            return x * (x ** (n - 1))
+
+    print("question4: ", power(2, 10), "\n")
+
+
+def question_7():
+    f = open('kdpF.txt')
+    line = f.readline()
+    print(line)
+    seq = ''
+    for line in f:
+        seq += line
+    seq = seq.replace('\n', '')
+    seq = seq.upper()
+    print(seq)
+
+    def gcContent(sequence):
+        counter = 0
+        for i in sequence:
+            if i == 'G' or i == 'C':
+                counter += 1
+        print("q7: ", counter / len(sequence) * 100, "%")
+
+    (gcContent(seq))
+
+
+question_7()
+
+if __name__ == "__main__":
+    question_1()
+    question_2()
+    question_3()
+    question_4()
+    question_7()
+
+
+
