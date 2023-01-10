@@ -1,0 +1,152 @@
+def question_1():
+    import random
+
+    values = [random.randrange(1, 7) for x in range(20)]
+
+    run = ''
+    list2 = []
+    output = ''
+
+    inRun = False
+    print("Q1: ")
+    print(values)
+
+    for i in range(len(values)):
+        if inRun:
+            if values[i] != values[i - 1]:
+                list2.append(run)
+                run = ''
+                inRun = False
+            else:
+                run += str(values[i])
+                print(run, list2)
+
+        if not inRun:
+            if i != len(values) - 1:
+                if values[i] == values[i + 1]:
+                    run += str(values[i])
+                    inRun = True
+                print(list2)
+    if len(list2) > 0:
+        output = output.join(str(element) for element in values)
+        for number in range(len(list2)):
+            output = output.replace(str(list2[number]), "(" + str(list2[number]) + ")")
+    print("Final line: ", output)
+    print("\n\n")
+
+
+def question_2():
+    import random
+
+    values = [random.randrange(1, 7) for x in range(20)]
+
+    list2 = []
+    run = ''
+    output = ''
+    inRun = False
+
+    print("Q2: ")
+    print(values)
+
+    for i in range(len(values)):
+        if inRun:
+            if values[i] != values[i - 1]:
+                list2.append(run)
+                run = ''
+                inRun = False
+
+            else:
+                run += str(values[i])
+
+        if not inRun:
+            if i != len(values) - 1:
+                if values[i] == values[i + 1]:
+                    run += str(values[i])
+                    inRun = True
+
+    print("\n")
+    list2 = sorted(list2, key=len)
+
+    output = ''
+
+    if len(list2) > 0:
+        output = output.join(str(element) for element in values)
+        output = output.replace(list2[-1], "(" + list2[-1] + ")")
+
+    print(output)
+    print("\n\n")
+
+
+def question_5():
+    L = [5, 2, 9, 9, 2, 5]
+
+    def isPal(L):
+        temp = []
+        for i in L:
+            temp.append(i)
+        temp.reverse()
+        print("\n\n")
+        print("Q5: ")
+
+        if temp == L:
+            return True
+        return False
+
+    print(isPal(L))
+
+
+#q3 q4
+def question_4()
+    import math
+
+    def longestFalse(L):
+      l1 = []
+      l2 = []
+
+      for i in range(len(L)):
+        if L[i] == 'False':
+          l2.append(i)
+        if L[i] == 'True':
+          if len(l2) > 0:
+            l1.append(l2)
+            l2 = []
+      if len(l2) > 0:
+        l1.append(l2)
+
+      max = []
+      for i in l1:
+        if len(i) > len(max):
+          max = i
+
+      return (max[0], max[-1])
+
+    L = []
+    for i in range(10):
+      L.append("False")
+      print("_", sep=" ", end=" ")
+
+    print("\n")
+
+    for i in L:
+
+      LF = longestFalse(L)
+
+      B = math.ceil((LF[1]-LF[0])/2) + LF[0]
+
+      L[B] = "True"
+
+      for i in L:
+        if i == "False":
+          print("_", sep=" ", end=" ")
+        else:
+          print("X", sep=" ", end=" ")
+
+      print("\n")
+  
+  
+ if __name__ == "__main__":
+    question_1()
+    question_2()
+    question_3()
+    question_4()
+    question_5()
