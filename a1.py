@@ -1,6 +1,4 @@
 # Assignment 1 file
-# Name: Sitara Rezaee
-# Student ID: 501181547
 
 # Looking to travel to city for holiday break.
 # User is asked to enter city they wish to visit and budget. Main priority is tickets, transportation, accommodation
