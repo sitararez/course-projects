@@ -8,10 +8,10 @@ def question_1():
         counter += 1
         list1.append(input("Enter string " + str(counter) + "/5: "))
     counter2 = 6
-    for x in range(5):
+    for j in range(5):
         counter2 -= 1
-        newlist = list1[::-1]
-        print(" String " + str(counter2) + "/5: ", str(newlist[x]))
+        reversed = list1[::-1]
+        print(" String " + str(counter2) + "/5: ", str(reversed[j]))
 
 #return longest string
 def question_3():
