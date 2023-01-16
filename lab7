@@ -77,24 +77,6 @@ def question_2():
     print("\n\n")
 
 
-def question_5():
-    L = [5, 2, 9, 9, 2, 5]
-
-    def isPal(L):
-        temp = []
-        for i in L:
-            temp.append(i)
-        temp.reverse()
-        print("\n\n")
-        print("Q5: ")
-
-        if temp == L:
-            return True
-        return False
-
-    print(isPal(L))
-
-
 #q3 q4
 def question_4()
     import math
@@ -142,6 +124,23 @@ def question_4()
           print("X", sep=" ", end=" ")
 
       print("\n")
+      
+ def question_5():
+    L = [5, 2, 9, 9, 2, 5]
+
+    def isPal(L):
+        temp = []
+        for i in L:
+            temp.append(i)
+        temp.reverse()
+        print("\n\n")
+        print("Q5: ")
+
+        if temp == L:
+            return True
+        return False
+
+    print(isPal(L))
   
   
  if __name__ == "__main__":
