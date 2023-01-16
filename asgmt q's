@@ -1,0 +1,100 @@
+   #this program cannot be tested as I do not have access to the separate file wiht test cases
+   
+   #q2
+   counter = 0
+
+    #if the list is empty or only has 1 element, cannot use same comparison as below -- return True
+    if len(items) == 0 or len(items) == 1:
+        return True
+
+    #for each index in items
+    for index in range(len(items)):
+
+        if index != len(items) - 1:
+            # condition for all elements
+            if items[index] < items[index+1]:
+                counter += 1
+
+        elif index == len(items)-1:
+            # pertains to last element, has no element after to compare to
+            if items[index] > items[index-1]:
+                counter += 1
+
+    #if the counter increased after each iteration
+    if counter == len(items):
+        return True
+    else:
+        return False
+        
+        
+#q4
+def only_odd_digits(n):
+    counter_even = 0
+    counter_odd = 0
+
+    #string of even and odd counter (can't find len of int)
+    counts = ''
+    counts2 = ''
+
+    #converting n to string to iterate in for loop
+    nwn = str(n)
+    for digit in nwn:
+
+        #converting elements of number into ints
+        num = int(digit)
+        if num % 2 == 0:
+            #counter for even numbers increase
+            counter_even += num
+            #convert to str to find len
+            counts = str(counter_even)
+        else:
+            #if odd, counter of odd numbers increases
+            counter_odd += 1
+            counts_2 = str(counter_odd)
+
+    #if counter for even digits in number is 0, means no even numbers
+    if len(counts) == 0:
+        #function returns True
+        return True
+    #if there are even digits, return false
+    else:
+        return False
+        
+        
+ #q5
+def is_cyclops(n):
+    if n == 0:
+        return True
+
+    # tracking number of 0's
+    counter = 0
+
+    # cannot find length of int, must convert to string
+    newnum = str(n)
+
+    # assigning variable to length
+    length = len(newnum)
+
+    # finding centre of number
+    middle = (length // 2) + 1
+
+    # count zeros
+    for digit in newnum:
+        if digit == '0':
+            counter += 1
+
+    # if more than one zero, should not accept as True
+    if counter > 1:
+        return False
+
+    # if length of number is odd
+    if length % 2 == 1:
+        # if the centre number is zero, middle - 1 because index starts at 0
+        if newnum[middle - 1] == '0':
+            return True
+        # if odd but centre number is not zero, is false
+        else:
+            return False
+    # if length is not odd, false
+    else:
+        return False
