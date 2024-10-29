@@ -1,0 +1,218 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lab 5 - JS and jQuery</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close_fullscreen"
+		/>
+
+		<link rel="stylesheet" href="lab05.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Marcellus&family=Neucha&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:ital,wght@0,100..900;1,100..900&family=Marcellus&family=Neucha&family=Ojuju:wght@200..800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Italiana&family=Jost:ital,wght@0,100..900;1,100..900&family=Marcellus&family=Neucha&family=Ojuju:wght@200..800&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<h1>Lab 5: jQuery - Problems 1 to 3</h1>
+		<h2>Problem 1: Form Validation</h2>
+		<section class="formSection">
+			<h3>User Contact Info</h3>
+			<form id="userForm">
+				<label for="name">Full name:</label><br />
+				<input type="text" id="name" required /><br /><br />
+
+				<label for="number"
+					>Contact Number (e.g., (416) 555-5555):</label
+				><br />
+				<input type="text" id="number" required /><br /><br />
+
+				<label for="address">Address:</label><br />
+				<input type="text" id="address" required /><br /><br />
+
+				<button type="button" id="enterBtn">Enter</button>
+				<br /><br />
+				<section class="error" id="errorMsg"></section>
+				<br /><br />
+			</form>
+
+			<section
+				class="output"
+				id="finalOutput"
+				style="
+					display: none;
+					width: 40%;
+					background-color: rgb(77, 65, 89);
+					color: white;
+					padding: 20px;
+					border-radius: 2%;
+				"
+			>
+				<p
+					style="
+						font-family: Italiana, sans-serif;
+						font-weight: 400;
+						font-style: normal;
+						font-size: 24px;
+						text-decoration: underline;
+					"
+				>
+					Updated Contact Info:
+				</p>
+				<span id="outputName"></span><br /><br />
+				<span id="outputNumber"></span><br /><br />
+				<span id="outputAddress"></span><br /><br />
+			</section>
+		</section>
+
+		<h2>Problem 2: Counting Characters</h2>
+		<div
+			style="
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 20px;
+			"
+		>
+			<textarea id="textInput" cols="45" rows="15"></textarea>
+			<div>
+				<p style="font-size: 24px">
+					Total characters: <span id="result">0</span>
+				</p>
+				<p style="font-size: 24px">
+					Total letters (no whitespace):
+					<span id="letterCount">0</span>
+				</p>
+			</div>
+		</div>
+
+		<h2>Problem 3: Full Screen Image</h2>
+
+		<div id="images-container">
+			<img
+				style="width: 300px; height: 150px"
+				class="lakeImg"
+				src="lake.jpg"
+				alt="Fullscreen Image"
+			/>
+
+			<img
+				style="width: 50px; height: 50px"
+				class="zoomOut"
+				src="close_fullscreen_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
+				alt="zoomOut Icon"
+			/>
+		</div>
+
+		<script>
+			//problem 1 jQuery
+			$(document).ready(function () {
+				function nameCheck(name) {
+					return /^[A-Za-z\s]+$/.test(name);
+				}
+
+				function numberCheck(number) {
+					return /^\(\d{3}\) \d{3}-\d{4}$/.test(number);
+				}
+
+				function numberFormat(number) {
+					return number.replace(
+						/\((\d{3})\) (\d{3})-(\d{4})/,
+						"$1-$2-$3"
+					);
+				}
+
+				$("#enterBtn").click(function () {
+					const name = $("#name").val().trim();
+					const number = $("#number").val().trim();
+					const address = $("#address").val().trim();
+
+					$("#errorMsg").text("");
+					$("#finalOutput").hide();
+
+					if (!nameCheck(name)) {
+						$("#errorMsg").text(
+							"Please only use letters for 'Full name' field."
+						);
+						return;
+					}
+
+					if (!numberCheck(number)) {
+						$("#errorMsg").text(
+							'Invalid formatting. Please use "(416) 555-5555" format.'
+						);
+						return;
+					}
+
+					const formattedPhone = numberFormat(number);
+
+					$("#outputName").html(`Name: ${name}`);
+					$("#outputAddress").html(`Address: ${address}`);
+					$("#outputNumber").html(
+						`Contact Number: ${formattedPhone}`
+					);
+
+					$("#finalOutput").show();
+				});
+
+				//problem 2 jQuery
+				$("#textInput").on("keyup", function () {
+					charCount($(this).val());
+					letterCount($(this).val());
+				});
+
+				//problem 3 jQuery
+				$(".lakeImg").click(function () {
+					$(this).animate({
+						left: "250px",
+						height: "100%",
+						width: "100%",
+					});
+				});
+
+				$(".zoomOut").click(function () {
+					$(".lakeImg").animate({
+						left: "0px",
+						width: "300px",
+						height: "150px",
+					});
+				});
+			});
+
+			//problem 2 JS
+			function charCount(string) {
+				var stringLength = string.length;
+				document.getElementById("result").innerHTML = stringLength;
+			}
+
+			function letterCount(string) {
+				var letters = string.match(/[A-Za-z]/g);
+				var letterCount = letters ? letters.length : 0;
+				document.getElementById("letterCount").innerHTML = letterCount;
+			}
+		</script>
+	</body>
+</html>

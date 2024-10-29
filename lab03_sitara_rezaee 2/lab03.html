@@ -1,0 +1,139 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Part C: Reflection</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Buda:wght@300&family=Macondo&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="lab03a.css" />
+	</head>
+
+	<body class="bodyStyle" id="bgColour">
+		<header>
+			<section class="headerStyle">
+				<h1 class="macondo-regular" style="font-weight: 500">
+					<!--hovering over this makes it jump!-->
+					Mozambique Marvels🇲🇿
+				</h1>
+
+				<section class="listPosition">
+					<nav class="listLayout">
+						<ul>
+							<li><a class="links" href="#main">Home</a></li>
+							<li>
+								<a class="links" href="#cities">Cities</a>
+							</li>
+							<li>
+								<a class="links" href="#gallery">Gallery</a>
+							</li>
+							<li><a class="links" href="#about">About</a></li>
+						</ul>
+					</nav>
+				</section>
+			</section>
+			<section>
+                <h4>
+                    Links to HTML/CSS & Bootstrap pages: 
+                </h4>
+                <a href="https://cs.torontomu.ca/~s4rezaee/lab03/lab03a.html">HTML & CSS</a>
+                <br>
+                <a href="https://cs.torontomu.ca/~s4rezaee/lab03/lab03b.html">Bootstrap</a>
+
+			</section>
+		</header>
+
+		<main>
+			<section id="introStyle">
+				<section id="featured-story">
+					<h2>Part C: Reflection</h2>
+					<p id="pStyle">
+						When looking at the two methods, each has its own benefits and drawbacks. CSS allows you to have complete control over every detail, letting you customize the layout, style, and responsiveness exactly how you want. This flexibility is great for creating a design that matches your vision. However, it can be time-consuming since it often involves manually adjusting elements, testing sizes, and tweaking breakpoints through trial and error. Media queries can be particularly challenging because you need to consider different screen sizes and devices. On the other hand, CSS provides a solid way to organize content, but you must build the entire layout from the ground up. I found CSS to be more intuitive since I had direct control, but it took a lot of time, especially to get the responsive features right. 
+					</p>
+                    <p>In contrast, Bootstrap offers ready-made classes, grids, and tools that speed up the development process. Making a webpage responsive is easier with Bootstrap because its grid system is designed for various screen sizes, requiring less code. This helps create professional-looking layouts without needing to manually set the size or responsiveness of each element. The downside is that you may feel limited by the framework's choices. Customizing beyond Bootstrap’s defaults can be time-consuming and may need some research into the documentation. Learning the grid system took some effort, but once I understood it, it saved a lot of time compared to writing CSS from scratch. Overall, I found Bootstrap to be faster and more efficient for styling and responsiveness. The convenience of not having to adjust every element for different screen sizes was a big plus. While CSS offered more control, I preferred the ease and speed of Bootstrap for this project, especially when considering time and functionality.
+                    </p>
+					<section class="mainPic">
+						<figure id="figureLayout">
+							<img
+								id="imgStyle"
+								src="mozambique_coast.jpg"
+								alt="coast"
+							/>
+							<figcaption id="captionLayout">
+								Mozambique’s Stunning Coastline
+							</figcaption>
+						</figure>
+
+						<aside class="loginAside">
+							<h2>Login</h2>
+							<form id="login-form">
+								<label id="loginFont" for="username"
+									>Username:</label
+								><br />
+								<input
+									type="text"
+									id="username"
+									name="username"
+									required
+								/><br /><br />
+
+								<label id="loginFont" for="password"
+									>Password:</label
+								><br />
+								<input
+									type="password"
+									id="password"
+									name="password"
+									required
+								/><br /><br />
+
+								<button id="buttonStyle" type="submit">
+									Login
+								</button>
+							</form>
+							<p><br /></p>
+							<a class="links" href="#createAccount"
+								>Create Account</a
+							>
+						</aside>
+					</section>
+				</section>
+			</section>
+
+
+			
+	</body>
+	<footer id="footerStyle">
+		<section class="listPosition">
+			<nav class="footerLayout">
+				<ul>
+					<li>
+						<a id="linkColour" class="links" href="#terms"
+							>Terms of Service</a
+						>
+					</li>
+					<li>
+						<a id="linkColour" class="links" href="#privacy"
+							>Privacy Policy</a
+						>
+					</li>
+					<li>
+						<a id="linkColour" class="links" href="#contact"
+							>Contact Us</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<p id="privacyRights">
+			_ © 2024 Mozambique Odyssey. All rights reserved.
+		</p>
+	</footer>
+</html>

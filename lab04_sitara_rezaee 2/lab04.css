@@ -1,0 +1,44 @@
+/** @format */
+
+.secureIcon {
+	color: green;
+	margin-right: 8px;
+}
+.unsecureIcon {
+	color: red;
+	margin-right: 8px;
+}
+.bookmark {
+	margin-bottom: 10px;
+}
+
+.isPalindrome {
+	color: green;
+}
+.notAPalindrome {
+	color: red;
+}
+
+h1 {
+	font-family: "Jost", sans-serif;
+	font-optical-sizing: auto;
+	color: rgb(185, 151, 157);
+}
+
+h2 {
+	font-family: "Jost", sans-serif;
+	font-optical-sizing: auto;
+}
+
+body {
+	font-family: "Neucha", cursive;
+	margin: 20px;
+	background-color: rgb(240, 211, 225);
+}
+
+button {
+	font-family: "Neucha", cursive;
+	background-color: rgb(94, 75, 87);
+	color: white;
+	font-size: 16px;
+}

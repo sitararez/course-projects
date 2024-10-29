@@ -1,0 +1,459 @@
+/**
+ * Use id when styling or manipulating a unique element.
+ * Use class for styling multiple elements that share the same style.
+ * @format
+ */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: rgb(153, 192, 219);
+}
+
+h1 {
+	color: #2c3e50;
+	font-family: "Macondo", cursive;
+	font-weight: 400;
+	font-size: 40px;
+	animation: bounce 1s ease;
+	text-align: center;
+}
+
+h1:hover {
+	transform: translateY(-20px);
+	animation: jump 0.5s ease;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
+[class*="col-"] {
+	padding: 15px;
+}
+
+.col-1 {
+	width: 8.33%;
+}
+.col-2 {
+	width: 16.66%;
+}
+.col-3 {
+	width: 25%;
+}
+.col-4 {
+	width: 33.33%;
+}
+.col-5 {
+	width: 41.66%;
+}
+.col-6 {
+	width: 50%;
+}
+.col-7 {
+	width: 58.33%;
+}
+.col-8 {
+	width: 66.66%;
+}
+.col-9 {
+	width: 75%;
+}
+.col-10 {
+	width: 83.33%;
+}
+.col-11 {
+	width: 91.66%;
+}
+.col-12 {
+	width: 100%;
+}
+
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+h3 {
+	font-family: "Macondo", cursive;
+	font-size: 24px;
+}
+
+h2 {
+	font-family: "Buda", cursive;
+}
+
+p {
+	font-family: "Buda", cursive;
+}
+
+caption {
+	font-family: "Buda", cursive;
+}
+
+@keyframes bounce {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-20px);
+	}
+	60% {
+		transform: translateY(-10px);
+	}
+}
+
+.headerStyle {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.mainPic {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-top: 20px;
+	width: 100%;
+}
+
+.mainPic,
+#figureLayout {
+	width: 100%;
+	flex: 1;
+}
+
+.bodyStyle {
+	margin: 20px;
+	position: relative;
+	z-index: 1;
+}
+
+#footerStyle {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: rgba(23, 42, 47, 0.601);
+	color: rgb(206, 203, 203);
+}
+
+#buttonStyle {
+	background-color: rgba(23, 42, 47, 0.601);
+	font-family: "Buda", serif;
+	font-size: 24px;
+	color: rgb(206, 203, 203);
+	padding: 10px;
+	transition: background-color 0.3s ease;
+}
+
+#buttonStyle:hover {
+	background-color: #0f595b;
+	cursor: pointer;
+}
+
+.listLayout ul {
+	list-style: none;
+	padding: 0;
+	font-family: "Buda", cursive;
+}
+
+.listLayout li {
+	display: inline;
+	margin: 0 15px;
+	cursor: pointer;
+	font-family: "Buda", cursive;
+}
+
+a:visited {
+	color: rgb(128, 0, 100);
+}
+
+.infoImg,
+.hoverImg {
+	width: 30%;
+	height: auto;
+	max-width: 300px;
+}
+
+.infoFig {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-top: 20px;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+#imgStyle {
+	width: 80%;
+	height: "auto";
+}
+
+#login-form {
+	width: 90%;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 5px;
+}
+
+#picsLayout {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 5%;
+}
+
+a {
+	font-family: "Buda", cursive;
+	color: black;
+}
+
+/* input[type="text"],
+input[type="password"] {
+	width: calc(100% - 20px);
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+} */
+
+/* Pseudo-elements and pseudo-classes */
+p::first-letter {
+	font-size: 2em;
+	color: rgba(23, 42, 47, 0.601);
+}
+
+::selection {
+	background-color: rgba(82, 155, 5, 0.517);
+	color: black;
+}
+
+.loginAside {
+	width: 300px;
+	max-width: 400px;
+	background-color: rgba(68, 110, 120, 0.412);
+	padding: 2%;
+	margin-right: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	justify-content: center;
+}
+
+#login-form input {
+	width: 90%;
+	max-width: 300px;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+#smallImgStyle {
+	width: 400px;
+	height: 200px;
+	transition: opacity 0.5s ease;
+	cursor: pointer;
+}
+
+#smallImgFigureLayout {
+	flex: 1 1 30%;
+	margin: 10px;
+}
+
+#smallCaptionLayout {
+	font-family: "Buda", cursive;
+}
+
+@media (max-width: 800px) {
+	.mainPic,
+	.infoFig {
+		flex-direction: column;
+	}
+	.infoImg,
+	.hoverImg {
+		width: 100%;
+		max-width: none;
+	}
+
+	.picsLayout {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.layout {
+		float: left;
+		width: 50%;
+	}
+}
+
+@media (max-width: 600px) {
+	h1 {
+		font-size: 28px;
+	}
+	h2,
+	h3 {
+		font-size: 22px;
+	}
+	.headerStyle {
+		flex-direction: column;
+		text-align: center;
+	}
+	#footerStyle {
+		flex-direction: column;
+	}
+	.bodyStyle {
+		margin: 10px;
+	}
+	#buttonStyle {
+		width: 100%;
+	}
+	.picsLayout {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#smallImgFigureLayout {
+		flex: 1 1 100%;
+		margin: 5px 0;
+	}
+
+	.loginAside,
+	#picsLayout {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.col-4 {
+		width: 100%;
+	}
+
+	h1 {
+		font-size: 28px;
+	}
+
+	/* #login-form {
+		width: 90%;
+	} */
+	/* 
+	#login-form input {
+		max-width: none;
+	} */
+}
+
+/* tablet - between 601px and 1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+	h1 {
+		font-size: 35px;
+	}
+	h2,
+	h3 {
+		font-size: 26px;
+	}
+	.infoImg,
+	.hoverImg {
+		width: 80%;
+		max-width: 500px;
+	}
+	#footerStyle {
+		flex-direction: row;
+	}
+	.bodyStyle {
+		margin: 15px;
+	}
+	.picsLayout {
+		flex-direction: column;
+	}
+
+	.picsLayout {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#smallImgFigureLayout {
+		flex: 1 1 100%;
+		margin: 5px 0;
+	}
+}
+
+/* desktop 1025px + */
+@media (min-width: 1025px) {
+	h1 {
+		font-size: 40px;
+	}
+	h2,
+	h3 {
+		font-size: 30px;
+	}
+	.infoImg,
+	.hoverImg {
+		width: 50%;
+	}
+	.bodyStyle {
+		margin: 20px;
+	}
+	#footerStyle {
+		justify-content: space-between;
+	}
+}
+
+/* desktop - small */
+@media (min-width: 769px) and (max-width: 1024px) {
+	h1 {
+		font-size: 36px;
+	}
+	.infoImg,
+	.hoverImg {
+		width: 70%;
+		height: auto;
+	}
+}
+
+/* phone - big */
+@media (min-width: 601px) and (max-width: 768px) {
+	h1 {
+		font-size: 32px;
+	}
+	.infoImg,
+	.hoverImg {
+		width: 90%;
+		height: auto;
+	}
+	.picsLayout {
+		flex-direction: column;
+	}
+
+	.picsLayout {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#smallImgFigureLayout {
+		flex: 1 1 100%;
+		margin: 5px 0;
+	}
+}
+
+.infoFig p,
+.infoFig img {
+	width: 100%;
+}

@@ -1,0 +1,241 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ChronicleCraft</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Buda:wght@300&family=Macondo&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="lab02.css" />
+	</head>
+
+	<body class="bodyStyle" id="bgColour">
+		<header>
+			<section class="headerStyle">
+				<h1 class="macondo-regular" style="font-weight: 500">
+					<!--hovering over this makes it jump!-->
+					ChronicleCraft📝
+				</h1>
+
+				<section class="listPosition">
+					<nav class="listLayout">
+						<ul>
+							<li><a class="links" href="#main">Home</a></li>
+							<li>
+								<a class="links" href="#chronicles">Stories</a>
+							</li>
+							<li>
+								<a class="links" href="#craft"
+									>Create a Story</a
+								>
+							</li>
+							<li><a class="links" href="#about">About</a></li>
+						</ul>
+					</nav>
+				</section>
+			</section>
+			<section>
+				<h3>Let your imagination soar and craft your own destiny!</h3>
+			</section>
+		</header>
+
+		<main>
+			<section id="introStyle">
+				<section id="featured-story">
+					<h2>Sample Walkthrough: Mystic Manor</h2>
+					<p id="pStyle">
+						You awaken on a silent train, with no memory of how you
+						arrived. The sky is heavy with dark clouds as the train
+						grinds to a halt. The doors slide open, and an unseen
+						force propels you out. As you gather yourself and look
+						back, the train has already vanished into the distance.
+						Before you lies a desolate wilderness, vast and
+						unsettling. In the distance, a forsaken manor stands,
+						shrouded in mystery. Beyond it, the horizon stretches
+						empty and unknown. Do you dare enter the manor, or lose
+						yourself in the wilderness? The choice is yours, the
+						first of many in this unfolding tale.
+					</p>
+					<figure id="figureLayout">
+						<img
+							id="imgStyle"
+							class="hoverImg"
+							src="manor.jpg"
+							alt="Haunted Manor"
+						/>
+						<figcaption id="captionLayout">
+							The Mystic Manor - Your Journey Begins
+						</figcaption>
+					</figure>
+					<section id="buttonsLayout">
+						<button
+							id="buttonStyle"
+							onclick="alert('You chose 1: Enter manor!')"
+						>
+							1: Enter manor
+						</button>
+						<button
+							id="buttonStyle"
+							onclick="alert('You chose 2: Explore Forest!')"
+						>
+							2: Explore forest
+						</button>
+					</section>
+				</section>
+
+				<aside class="loginAside">
+					<h2>Login</h2>
+					<form id="login-form">
+						<label id="loginFont" for="username">Username:</label
+						><br />
+						<input
+							type="text"
+							id="username"
+							name="username"
+							required
+						/><br /><br />
+
+						<label id="loginFont" for="password">Password:</label
+						><br />
+						<input
+							type="password"
+							id="password"
+							name="password"
+							required
+						/><br /><br />
+
+						<button id="buttonStyle" type="submit">Login</button>
+					</form>
+					<p><br /></p>
+					<a class="links" href="#createAccount">Create Account</a>
+				</aside>
+			</section>
+
+			<section id="create-story">
+				<h2>Create Your Own Story</h2>
+				<p>
+					Begin crafting your untold journey by completing the form
+					below, and let the mystery unfold:
+				</p>
+				<form>
+					<label class="textFont" for="title">Chronicle Title:</label
+					><br />
+					<input
+						class="textFont"
+						type="text"
+						id="title"
+						name="title"
+					/><br /><br />
+
+					<label class="textFont" for="story-content"
+						>Chronicle Script:</label
+					><br />
+					<textarea
+						id="story-content"
+						name="story-content"
+						rows="5"
+						cols="172"
+					></textarea
+					><br /><br />
+
+					<input
+						id="buttonStyle"
+						class="textFont"
+						type="submit"
+						value="Craft Chronicle"
+					/>
+				</form>
+			</section>
+
+			<section id="hiddenSection">
+				<button id="hiddenButtonStyle">Show/Hide Details</button>
+				<p id="details" class="hidden">
+					<!--HIDDEN USING DISPLAY IN CSS FILE-->
+					This website is for recreational purposes only. Profits off
+					of stories not permitted. For more information, read Terms
+					of Service and Privacy Policy.
+				</p>
+			</section>
+			<section id="storiesLayout">
+				<figure id="smallImgFigureLayout">
+					<img
+						id="smallImgStyle"
+						class="hoverImg"
+						src="ocean.jpg"
+						alt="Beneath the Blue"
+					/>
+					<figcaption id="smallCaptionLayout">
+						Beneath the Blue
+					</figcaption>
+				</figure>
+
+				<figure id="smallImgFigureLayout">
+					<img
+						id="smallImgStyle"
+						class="hoverImg"
+						src="pisa.jpg"
+						alt="Illusions of Italy"
+					/>
+					<figcaption id="smallCaptionLayout">
+						Illusions of Italy
+					</figcaption>
+				</figure>
+
+				<figure id="smallImgFigureLayout">
+					<img
+						id="smallImgStyle"
+						class="hoverImg"
+						src="pyramids.jpg"
+						alt="Paradise in the Pyramids"
+					/>
+					<figcaption id="smallCaptionLayout">
+						Paradise in the Pyramids
+					</figcaption>
+				</figure>
+
+				<figure id="frozenFigureLayout">
+					<img
+						id="pyramidImgStyle"
+						class="hoverImg"
+						src="frozen.jpg"
+						alt="Frozen Frenzy"
+					/>
+					<figcaption id="smallCaptionLayout">
+						Frozen Frenzy
+					</figcaption>
+				</figure>
+			</section>
+		</main>
+	</body>
+	<footer id="footerStyle">
+		<section class="listPosition">
+			<nav class="footerLayout">
+				<ul>
+					<li>
+						<a id="linkColour" class="links" href="#terms"
+							>Terms of Service</a
+						>
+					</li>
+					<li>
+						<a id="linkColour" class="links" href="#privacy"
+							>Privacy Policy</a
+						>
+					</li>
+					<li>
+						<a id="linkColour" class="links" href="#contact"
+							>Contact Us</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<p id="privacyRights">_ © 2024 ChronicleCraft. All rights reserved.</p>
+	</footer>
+</html>
